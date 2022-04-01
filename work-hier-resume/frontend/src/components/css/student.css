@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+}
+
+.body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vh;
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    font-style: 14px;
+    background-color: lightblue;
+    cursor: pointer;
+    background-clip: padding-box;
+}
+
+.circle {
+    height: 29px;
+    width: 29px;
+    line-height: 25px;
+    background-color: green;
+    color: white;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    text-align: center;
+
+}
+
+
+.stepWrapper {
+    display: flex;
+    margin-bottom: 20px;
+
+}
+
+.stepBlock .circleWrapper  {
+    padding: 0px 20px;
+    position: relative;
+}
+
+.selected .circle {
+    color: #000;
+    background-color: rgb(252, 247, 247);
+    border-color: rgb(41, 151, 7);
+}
+
+.stepBlock:not(:last-child) > .circleWrapper::after {
+    content: "";
+    width: 55px;
+    height: 1px;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    background-color: green;
+    margin: auto;
+    margin-left: 29px;
+    
+}
+
+.stepBlock:not(:last-child)>.circleWrapper::after {
+    height: 3px;
+}
+
+.stepBlock:not(:last-child).selected>.circleWrapper::after,
+.stepBlock:not(:last-child).selected~.stepBlock:not(:last-child)>.circleWrapper::after {
+    height: 2px;
+}
+
+
+.primaryButton {
+    padding: 25px;
+    background-color: green;
+    border: none;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+
+}
